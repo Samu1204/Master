@@ -1,0 +1,53 @@
+
+
+
+
+<br>
+<br>
+<div class="container">
+  <div class="sidebar">
+    <div class="form-control">
+      <label for="search">Child1:</label>
+      <input id="search" name="search" type="text" [(ngModel)] = 'val' (input)="onSearchChange($event.target.value)"  />
+    </div>
+    <p>Selected Data: {{selectedEmployeeName}}</p>
+  </div>
+  <style>
+    .vl { 
+      border-left: 4px solid gray;
+      height : 1000px;
+      position: absolute;
+      left: 20%;
+      margin-left: -2px;
+      top:0;
+    }
+  </style>
+  <div class="vl"></div>
+  <div class="main-content">
+    <p>Input Text:{{val}}</p>
+    <br>
+    <table  border="1px" cellspacing="0" style="background-color: azure" style="width: 500px ;" style="font-size:larger;" >
+      
+      <tr>
+        <th width="10%"> Id</th>
+        <th width="30%"> Name </th>
+        <th width="20%"> Username </th>
+        <th width="20%"> Email </th>
+        <th width="20%"> Mobile </th>
+       
+      </tr>
+       
+      <tr *ngFor=' let o of empolyess' >
+        <td> {{o.id}}</td>
+        <td> {{o.name}}</td>
+        <td> {{o.username}}</td>
+        <td> {{o.email}}</td>
+        <td> {{o.mobile}}</td>
+      </tr>
+     
+      
+      
+     
+     </table>
+  </div>
+</div>
